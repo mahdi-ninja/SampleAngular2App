@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ContactsComponent } from './+contacts';
 import { ContactsService } from './shared'
 import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { AddContactComponent } from './+add-contact';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +13,8 @@ import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
   providers: [ContactsService, ROUTER_PROVIDERS]
 })
 @Routes([
-  {path: '/contacts', component: ContactsComponent}
+  {path: '/contacts', component: ContactsComponent},
+  {path: '/add-contact', component: AddContactComponent}
 ])
 export class SampleAppAppComponent {
   title = 'Sample App';

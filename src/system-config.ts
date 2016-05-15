@@ -30,6 +30,7 @@ const barrels: string[] = [
   'app',
   'app/shared',
   'app/+contacts',
+  'app/+add-contact',
   /** @cli-barrel */
 ];
 
