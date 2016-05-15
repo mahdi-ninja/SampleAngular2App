@@ -7,7 +7,25 @@ export class ContactsService {
   constructor() {}
 
   getContacts(): Contact[] {
-    return [{
+    return this._contacts;
+  }
+  
+  deleteContact(id: number) : void {
+    var index = this._contacts.findIndex(c => c.id == id);
+    if(index > -1) {
+      this._contacts.splice(index, 1);
+    }
+  }
+  
+  addContact(contact: Contact) : void {
+    this._lastId++;
+    contact.id = this._lastId;
+    this._contacts.push(contact);
+  }
+
+
+  private _lastId: number = 3;
+  private _contacts: Contact[] = [{
       id: 1,
       firstName: 'Zane',
       lastName: 'Craven',
@@ -32,5 +50,4 @@ export class ContactsService {
       email: 'ChloePatten@email.com',
       dob: new Date('1968-11-16T00:00:00')
     }];
-  }
 }
