@@ -24,19 +24,24 @@ export class AddContactComponent implements OnInit {
   dob: string;
 
   save() : void {
-    let contact : Contact = new Contact();
-    contact.firstName = this.firstName;
-    contact.lastName = this.lastName;
-    contact.address = this.address;
-    contact.phone = this.phone;
-    contact.email = this.email;
-    let parsedDate = Date.parse(this.dob);
-    contact.dob = parsedDate ? new Date(parsedDate) : null;
+    if(this.firstName == undefined || this.firstName.length == 0)
+      return;
+    if(this.address == undefined || this.address.length == 0)
+      return;
 
-    if(contact.isValid()) {
-      this._contactsService.addContact(contact);
-      this._router.navigate(['contacts']); 
-    }
+    let parsedDate = Date.parse(this.dob);
+    let contact : Contact = {
+      id: null,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      address: this.address,
+      phone: this.phone,
+      email: this.email,
+      dob: parsedDate ? new Date(parsedDate) : null
+    };
+
+    this._contactsService.addContact(contact);
+    this._router.navigate(['contacts']); 
   }
   
   cancel() : void {
