@@ -8,6 +8,7 @@ export class ContactsService {
 
   getContacts(): Contact[] {
     return [{
+      id: 1,
       firstName: 'Zane',
       lastName: 'Craven',
       address: '51 Passage Avenue EAST BARRON QLD 4883',
@@ -15,6 +16,7 @@ export class ContactsService {
       email: 'ZaneCraven@email.com',
       dob: new Date('1991-02-02T00:00:00')
     }, {
+      id: 2,
       firstName: 'Sean',
       lastName: 'Lonsdale',
       address: '42 Murphy Street MOKINE WA 6401',
@@ -22,6 +24,7 @@ export class ContactsService {
       email: 'SeanLonsdale@email.com',
       dob: new Date('1978-03-11T00:00:00')
     }, {
+      id: 3,
       firstName: 'Chloe',
       lastName: 'Patten',
       address: '3 Scenic Road SAWPIT CREEK NSW 2627',

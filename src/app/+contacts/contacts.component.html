@@ -6,6 +6,7 @@
       <th>Phone</th>
       <th>Email</th>
       <th>Date of Birth</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -15,9 +16,10 @@
       <td>{{contact.phone}}</td>
       <td>{{contact.email | lowercase}}</td>
       <td>{{contact.dob | date}}</td>
+      <td><button (click)='deleteContact(contact.id)'>Delete</button></td>
     </tr>
     <tr *ngIf="!contacts.length" >
-      <td colspan="5">
+      <td colspan="6">
         Nothing to display!
       </td>
     </tr>

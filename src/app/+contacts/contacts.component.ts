@@ -10,6 +10,13 @@ import { Contact, ContactsService } from '../shared';
 export class ContactsComponent implements OnInit {
   contacts: Contact[];
   
+  deleteContact(id:number) : void {
+    var index = this.contacts.findIndex(c => c.id == id);
+    if(index > -1) {
+      this.contacts.splice(index, 1);
+    }
+  }
+
   constructor(private _contactsService: ContactsService) {}
 
   ngOnInit() {
