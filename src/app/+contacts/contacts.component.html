@@ -1,3 +1,25 @@
-<p>
-  contacts works!
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Date of Birth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{contact.firstName | uppercase}} {{contact.lastName}}</td>
+      <td>{{contact.address | slice:0:10}}</td>
+      <td>{{contact.phone}}</td>
+      <td>{{contact.email | lowercase}}</td>
+      <td>{{contact.dob | date}}</td>
+    </tr>
+    <tr *ngIf="!contacts.length" >
+      <td colspan="5">
+        Nothing to display!
+      </td>
+    </tr>
+  </tbody>
+</table>
